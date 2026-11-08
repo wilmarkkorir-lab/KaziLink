@@ -1,4 +1,4 @@
-export const API = "http://localhost:8000/api";
+export const API = import.meta.env.VITE_API_URL ?? "https://kazilink-veqi.onrender.com/api";
 export async function api(path, { method = "GET", body, form } = {}) {
   const headers = {}; const t = localStorage.getItem("token");
   if (t) headers.Authorization = `Token ${t}`;
